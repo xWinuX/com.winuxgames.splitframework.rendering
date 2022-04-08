@@ -1,0 +1,19 @@
+{
+    "name": "com.winuxgames.splitframework.rendering.editor",
+    "rootNamespace": "WinuXGames.SplitFramework.Rendering.Editor",
+    "references": [
+        "GUID:2c573e6b271651846a79655161004c5b",
+        "GUID:47064ffe4ed35714a9df419986a3153a"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
