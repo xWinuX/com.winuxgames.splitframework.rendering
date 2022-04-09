@@ -5,7 +5,7 @@
   "description": "Rendering for Split Apart Games",
   "unity": "2021.2",
   "dependencies": {
-    "com.unity.2d.sprite": "1.0.0",
+    "com.unity.2d.sprite": "^1.0.0",
     "com.winuxgames.splitframework.utility": "https://github.com/xWinuX/com.winuxgames.splitframework.utility.git"
   },
   "keywords": [],
