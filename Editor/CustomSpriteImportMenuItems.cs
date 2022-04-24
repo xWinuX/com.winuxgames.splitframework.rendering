@@ -6,7 +6,7 @@ namespace WinuXGames.SplitFramework.Rendering.Editor
     public static class CustomSpriteImportMenuItems
     {
         [MenuItem("CONTEXT/TextureImporter/Use first border for all Sprites")]
-        private static void CopyTransformToClipboard(MenuCommand command)
+        private static void UseFirstBorderForAllSprites(MenuCommand command)
         {
             // Setup factory and data provider
             SpriteDataProviderFactories factory = new SpriteDataProviderFactories();
