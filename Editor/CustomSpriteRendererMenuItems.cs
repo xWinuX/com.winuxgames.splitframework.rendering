@@ -8,31 +8,24 @@ namespace WinuXGames.SplitFramework.Rendering.Editor
     public static class CustomSpriteRendererMenuItems
     {
         private static SpriteRenderer GetSpriteRenderer(MenuCommand command) => EditorUtility.MenuCommandContextToType<SpriteRenderer>(command);
-        
+
+        private static void SetSpriteRendererShadowSettings(MenuCommand command, ShadowCastingMode shadowCastingMode, bool receiveShadows)
+        {
+            Renderer renderer = GetSpriteRenderer(command);
+
+            renderer.shadowCastingMode = shadowCastingMode;
+            renderer.receiveShadows    = receiveShadows;
+
+            UnityEditor.EditorUtility.SetDirty(renderer.gameObject);
+        }
+
         [MenuItem("CONTEXT/SpriteRenderer/Activate Shadows")]
-        private static void ActivateShadows(MenuCommand command)
-        {
-            SpriteRenderer renderer = GetSpriteRenderer(command);
+        private static void ActivateShadows(MenuCommand command) => SetSpriteRendererShadowSettings(command, ShadowCastingMode.On, true);
 
-            renderer.shadowCastingMode = ShadowCastingMode.On;
-            renderer.receiveShadows    = true;
-        }
-        
         [MenuItem("CONTEXT/SpriteRenderer/Deactivate Shadows")]
-        private static void DeactivateShadows(MenuCommand command)
-        {
-            SpriteRenderer renderer = GetSpriteRenderer(command);
+        private static void DeactivateShadows(MenuCommand command) => SetSpriteRendererShadowSettings(command, ShadowCastingMode.Off, false);
 
-            renderer.shadowCastingMode = ShadowCastingMode.Off;
-            renderer.receiveShadows    = false;
-        }
-        
         [MenuItem("CONTEXT/SpriteRenderer/Shadows Only")]
-        private static void ShadowsOnly(MenuCommand command)
-        {
-            SpriteRenderer renderer = GetSpriteRenderer(command);
-
-            renderer.shadowCastingMode = ShadowCastingMode.ShadowsOnly;
-        }
+        private static void ShadowsOnly(MenuCommand command) => SetSpriteRendererShadowSettings(command, ShadowCastingMode.ShadowsOnly, false);
     }
 }
