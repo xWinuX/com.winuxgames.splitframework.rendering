@@ -17,7 +17,8 @@ namespace WinuXGames.SplitFramework.Rendering
         public void Update()
         {
             //float stepSize = 0.414214f / _resolution.y;
-        
+
+            _camera.orthographic = true;
             Matrix4x4 matrix = _camera.projectionMatrix;
 
             float stretch = Mathf.Sqrt(Mathf.Pow((1f / 45f) * (transform.rotation.eulerAngles.x % 90), 2) + 1f);
