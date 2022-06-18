@@ -14,6 +14,8 @@ namespace WinuXGames.SplitFramework.Rendering
 
         private void Awake() { _camera = GetComponent<Camera>(); }
 
+        private void Start() { _camera.ResetProjectionMatrix(); }
+
         public void Update()
         {
             //float stepSize = 0.414214f / _resolution.y;
@@ -33,10 +35,7 @@ namespace WinuXGames.SplitFramework.Rendering
 
         private void LateUpdate()
         {
-            if (_previousResolution != _resolution)
-            {
-                _camera.ResetProjectionMatrix();
-            }
+            if (_previousResolution != _resolution) { _camera.ResetProjectionMatrix(); }
 
             _previousResolution = _resolution;
         }
