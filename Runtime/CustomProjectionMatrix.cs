@@ -14,10 +14,9 @@ namespace WinuXGames.SplitFramework.Rendering
 
         private void Awake() { _camera = GetComponent<Camera>(); }
 
-        private void Start() { _camera.ResetProjectionMatrix(); }
-
         public void Update()
         {
+            _camera.ResetProjectionMatrix();
             //float stepSize = 0.414214f / _resolution.y;
 
             _camera.orthographic = true;
@@ -31,13 +30,6 @@ namespace WinuXGames.SplitFramework.Rendering
             matrix.m11               = scaleBase * stretch;
             _camera.projectionMatrix = matrix;
             _camera.orthographicSize = orthoSize;
-        }
-
-        private void LateUpdate()
-        {
-            if (_previousResolution != _resolution) { _camera.ResetProjectionMatrix(); }
-
-            _previousResolution = _resolution;
         }
     }
 }
